@@ -4,10 +4,6 @@
 
 Run the HTML file and that's it!
 
-## 📚 Frameworks
-
-* *Bootstrap* - for UI styling
-
 ## 🔐 Back-End
 
   ### Dependencies
@@ -20,6 +16,7 @@ Run the HTML file and that's it!
   ### Dependencies
   
   * *Bootstrap* - for UI styling
+  * *jQuery* - for HTML DOM manipulation
   
 ## 📷 Screenshots
 
