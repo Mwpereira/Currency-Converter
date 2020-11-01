@@ -45,6 +45,15 @@ function flipAmounts() {
     const newOutputAmount = $("#inputAmount").val();
     const newInputAmount = $("#outputAmount").val();
 
+    const newOutputCurrency = $(".fromCurrencyList option:selected").text();
+    const newInputCurrency = $(".toCurrencyList option:selected").text();
+
+    $(".fromCurrencyList option:selected").val(newInputCurrency);
+    $(".toCurrencyList option:selected").val(newOutputCurrency);
+
+    console.log(newOutputCurrency);
+    console.log(newInputCurrency);
+
     $("#inputAmount").val(newInputAmount);
     $("#outputAmount").val(newOutputAmount);
 }
