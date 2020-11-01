@@ -1,5 +1,7 @@
 # Currency Converter
 
+Simple and easy to use live currency exchange calculator.
+
 ## 📐 Project Setup
 
 Run the HTML file and that's it!
