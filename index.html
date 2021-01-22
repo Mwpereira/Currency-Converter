@@ -10,26 +10,39 @@
 	<meta property="og:title" content="Currency Converter" />
 	<meta property="og:description" content="Live Currency Converter" />
 	<meta property="og:site_name" content="Currency Converter" />
+	<!---Bulma--->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 	<!---CSS--->
 	<link rel="stylesheet" href="./assets/css/styles.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-	<!---Bootstrap--->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!---jQuery--->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!---Website Properties--->
+	<title>Currency Converter</title>
+	<link rel="icon" href="./assets/icon/logo.ico" />
+</head>
 
-<body class="text-center">
-	<div class="top-section">
-		<img src="assets/img/logo.png" id="logo" />
-		<h1>Live Currency Converter</h1>
+<body>
+	<!-- <div class="columns is-center is-centered is-vcentered has-text-centered">
+		<div class="column"> -->
+	<!-- Title Section -->
+	<div class="section has-text-centered" id="hero">
+		<figure class="image is-128x128 mb-5" style="display: inline-block;">
+			<img src="./assets/img/logo.png" id="logo" />
+		</figure>
+		<h1 class="title has-text-light">Live Currency Converter</h1>
 	</div>
-	<form>
-		<div class="container">
-			<div class="section">
-				<input class="form-control" id="inputAmount" type="number" placeholder="Amount" min="1" />
-				<span>
-					<select class="form-control fromCurrencyList">
+	<div class="columns is-center is-centered is-vcentered has-text-centered">
+		<!-- From Currency Section -->
+		<div class="column is-3-fullhd is-4-widescreen is-4-desktop is-5-tablet is-mobile">
+			<div class="section pt-0 pb-0">
+				<div class="field">
+					<div class="control">
+						<input class="input is-warning" id="inputAmount" type="number" placeholder="Amount" min="1">
+					</div>
+				</div>
+				<div class="select is-fullwidth">
+					<select class="fromCurrencyList">
 						<option>CAD</option>
 						<option>USD</option>
 						<option>AUD</option>
@@ -41,19 +54,25 @@
 						<option>JPY</option>
 						<option>NZD</option>
 					</select>
-					<img src="https://www.countryflags.io/ca/flat/64.png"
-						class="rounded mx-auto d-block fromFlag"></img>
-				</span>
+				</div>
+				<figure class="image is-64x64 inline-block" style="display: inline-block;">
+					<img src="https://www.countryflags.io/ca/flat/64.png" class="fromFlag"></img>
+				</figure>
 			</div>
-			<div class="section">
-				<button type="button" class="btn btn-dark m-4" onclick="flipAmounts()">flip</button>
-				<medium class="form-text mlr-4 font-italic">to</medium>
-			</div>
-
-			<div class="section">
-				<input class="form-control" id="outputAmount" type="number" placeholder="Amount" min="1" readOnly />
-				<span>
-					<select class="form-control toCurrencyList">
+		</div>
+		<div class="column is-1">
+			<button class="button is-dark" onclick="flipAmounts()">Flip</button>
+		</div>
+		<div class="column is-3-fullhd is-4-widescreen is-4-desktop is-5-tablet is-mobile">
+			<!-- To Currency Section -->
+			<div class="section pt-0 pb-0">
+				<div class="field">
+					<div class="control">
+						<input class="input is-success" id="outputAmount" type="number" placeholder="Amount" min="1">
+					</div>
+				</div>
+				<div class="select is-fullwidth">
+					<select class="toCurrencyList">
 						<option>USD</option>
 						<option>CAD</option>
 						<option>AUD</option>
@@ -65,23 +84,16 @@
 						<option>JPY</option>
 						<option>NZD</option>
 					</select>
-					<img src="https://www.countryflags.io/us/flat/64.png" class="rounded mx-auto d-block toFlag"></img>
-				</span>
+				</div>
+				<figure class="image is-64x64" style="display: inline-block;">
+					<img src="https://www.countryflags.io/us/flat/64.png" class="toFlag"></img>
+				</figure>
 			</div>
 		</div>
-		</div>
-	</form>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
+	</div>
 </body>
 
 <script src="./scripts/script.js"></script>
+<script src="./scripts/ui.js"></script>
 
 </html>

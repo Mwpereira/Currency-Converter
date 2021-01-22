@@ -17,7 +17,7 @@ Run the HTML file and that's it!
 
   ### Dependencies
   
-  * *Bootstrap* - for UI styling
+  * *Bulma* - for UI styling
   * *jQuery* - for HTML DOM manipulation
   
 ## 📷 Screenshots
