@@ -6,6 +6,7 @@
     [
         {
             watchExternalChanges: true,
+            decimalPlaces: 4,
         },
         'floatPos',
     ]
