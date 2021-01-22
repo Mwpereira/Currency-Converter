@@ -10,7 +10,7 @@ Run the HTML file and that's it!
 
   ### Dependencies
   
-  * *Fixer.io* - for grabbing live exchange rates
+  * *ExchangeRates* - for grabbing live exchange rates
   * *CountryFlags.io* - for getting country flag images
 
 ## 🎨 Front-End
