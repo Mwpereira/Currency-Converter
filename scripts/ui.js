@@ -8,7 +8,7 @@ function updateInputTo(amount) {
 /**
  * Flipping exchange rates on the UI
  */
-function flipAmounts() {
+function flipExchanges() {
     const newOutputAmount = $('#inputAmount').val();
     const newInputAmount = $('#outputAmount').val();
 
