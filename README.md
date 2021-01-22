@@ -19,6 +19,7 @@ Run the HTML file and that's it!
   
   * *Bulma* - for UI styling
   * *jQuery* - for HTML DOM manipulation
+  * *AutoNumeric* - for formatting currency
   
 ## 📷 Screenshots
 

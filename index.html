@@ -17,6 +17,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 	<!---jQuery--->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!--AutoNumeric-->
+	<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.1.0"></script>
 	<!---Website Properties--->
 	<title>Currency Converter</title>
 	<link rel="icon" href="./assets/icon/logo.ico" />
@@ -38,7 +40,7 @@
 			<div class="section pt-0 pb-0">
 				<div class="field">
 					<div class="control">
-						<input class="input is-warning" id="inputAmount" type="number" placeholder="Amount" min="1">
+						<input class="input is-warning" id="inputAmount" type="text" placeholder="Amount" min="1">
 					</div>
 				</div>
 				<div class="select is-fullwidth">
@@ -68,7 +70,7 @@
 			<div class="section pt-0 pb-0">
 				<div class="field">
 					<div class="control">
-						<input class="input is-success" id="outputAmount" type="number" placeholder="Amount" min="1">
+						<input class="input is-success" id="outputAmount" type="text" placeholder="Amount" min="1">
 					</div>
 				</div>
 				<div class="select is-fullwidth">

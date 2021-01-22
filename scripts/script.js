@@ -4,11 +4,11 @@
 async function convertCurrency() {
     const fromCurrency = $('.fromCurrencyList option:selected').text();
     const toCurrency = $('.toCurrencyList option:selected').text();
-    const amount = $('#inputAmount').val();
+    const amount = $('#inputAmount').val().replace(/,/g, '');
 
-    await getExchangeRates().then((result) => {
+    await getExchangeRates().then((rates) => {
         // Exchange Rate Data
-        const exchangeRates = result.rates;
+        const exchangeRates = rates;
 
         // CAD Base
         if (fromCurrency == 'CAD') updateInputTo(exchangeRates[toCurrency] * amount);
@@ -20,11 +20,23 @@ async function convertCurrency() {
  * Receives Exchange Rates from API
  */
 async function getExchangeRates() {
-    // Request to the API
-    return await fetch('https://api.exchangeratesapi.io/latest?base=CAD', { method: 'GET' })
-        .then((response) => response.text())
-        .then((res) => {
-            return Promise.resolve(JSON.parse(res));
-        })
-        .catch(() => console.log('Error getting exchange rates'));
+    // Checks for exchange rates received within the last 5 minutes
+    const date = Date.now();
+
+    if (
+        sessionStorage.getItem('cc') == null ||
+        date - JSON.parse(sessionStorage.getItem('cc')).date > 300000
+    ) {
+        // Request to the API
+        return await fetch('https://api.exchangeratesapi.io/latest?base=CAD', { method: 'GET' })
+            .then((response) => response.text())
+            .then((res) => {
+                const data = JSON.parse(res);
+                sessionStorage.setItem('cc', JSON.stringify({ date: date, rates: data.rates }));
+                return Promise.resolve(data.rates);
+            })
+            .catch(() => console.log('Error getting exchange rates'));
+    } else {
+        return Promise.resolve(JSON.parse(sessionStorage.getItem('cc')).rates);
+    }
 }

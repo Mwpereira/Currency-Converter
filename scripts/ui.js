@@ -1,4 +1,17 @@
 /**
+ * Formats input numbers to use commas
+ */
+[inputAmount, outputAmount] = new AutoNumeric.multiple(
+    ['#inputAmount', '#outputAmount'],
+    [
+        {
+            watchExternalChanges: true,
+        },
+        'floatPos',
+    ]
+);
+
+/**
  * Updating amounts when input currency changes
  */
 function updateInputTo(amount) {
