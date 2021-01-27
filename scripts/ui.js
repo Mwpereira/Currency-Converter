@@ -6,7 +6,7 @@
     [
         {
             watchExternalChanges: true,
-            decimalPlaces: 4,
+            decimalPlaces: 2,
         },
         'floatPos',
     ]
@@ -23,17 +23,11 @@ function updateInputTo(amount) {
  * Flipping exchange rates on the UI
  */
 function flipExchanges() {
-    const newOutputAmount = $('#inputAmount').val();
-    const newInputAmount = $('#outputAmount').val();
-
     const newOutputCurrency = $('.fromCurrencyList option:selected').text();
     const newInputCurrency = $('.toCurrencyList option:selected').text();
 
     $('.fromCurrencyList').val(newInputCurrency);
     $('.toCurrencyList').val(newOutputCurrency);
-
-    $('#inputAmount').val(newInputAmount);
-    $('#outputAmount').val(newOutputAmount);
 
     changeFromCountryImage();
     changeToCountryImage();
