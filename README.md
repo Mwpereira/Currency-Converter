@@ -1,6 +1,6 @@
 # Currency Converter
 
-Simple and easy to use live currency exchange calculator.
+Simple and easy to use live currency exchange converter.
 
 ## 📐 Project Setup
 
