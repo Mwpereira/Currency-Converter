@@ -1,4 +1,14 @@
 /**
+ * Load all exchanges on page load
+ */
+function startup() {
+    $('#inputAmount').val(1);
+    convertCurrency().then(() => {
+        updateAllExchanges('CAD');
+    });
+}
+
+/**
  * Formats input numbers to use commas
  */
 [inputAmount, outputAmount] = new AutoNumeric.multiple(
@@ -11,6 +21,13 @@
         'floatPos',
     ]
 );
+
+/**
+ * Update img src
+ */
+function updateImg(element, country) {
+    $(element).attr('src', `https://www.countryflags.io/${country}/flat/64.png`);
+}
 
 /**
  * Updating amounts when input currency changes
@@ -36,28 +53,41 @@ function flipExchanges() {
 /**
  * Handles changing country images
  */
-
 function changeFromCountryImage() {
-    let selected = $('.fromCurrencyList option:selected').text();
-    $('img.fromFlag').attr(
-        'src',
-        `https://www.countryflags.io/${currencyToFlag[selected]}/flat/64.png`
-    );
-    convertCurrency();
+    const selected = $('.fromCurrencyList option:selected').text();
+    updateImg('img.fromFlag', currency[selected]);
+    convertCurrency(selected);
+    updateAllExchanges(selected);
 }
 
 function changeToCountryImage() {
     let selected = $('.toCurrencyList option:selected').text();
-    $('img.toFlag').attr(
-        'src',
-        `https://www.countryflags.io/${currencyToFlag[selected]}/flat/64.png`
-    );
+    updateImg('img.toFlag', currency[selected]);
+}
+
+/**
+ * Updates all of the exchanges at the bottom of the screen
+ */
+function updateAllExchanges(baseCurrency) {
+    updateImg('#baseCurrencyImg', currency[baseCurrency]);
+    $('#baseCurrency').html(`${baseCurrency}: 1`);
+
+    // Reusing currency object to store rates for each exchange
+    const updatedExchangeRates = convertAllCurrencies(baseCurrency, { ...currency });
+
+    let i = 1;
+    Object.keys(updatedExchangeRates).forEach((key) => {
+        updateImg(`#currency${i}Img`, currency[key]);
+        $(`#currency${i}`).html(
+            `${key}: ${Math.round((updatedExchangeRates[key] + Number.EPSILON) * 100) / 100}`
+        );
+        i++;
+    });
 }
 
 /**
  * jQuery event listeners
  */
-
 $('#inputAmount').keyup(() => {
     convertCurrency();
 });
@@ -75,7 +105,7 @@ $('.toCurrencyList').change(() => {
 /**
  * Object to hold currency/flag value
  */
-const currencyToFlag = {
+const currency = {
     AUD: 'AU',
     CAD: 'CA',
     CHF: 'CH',

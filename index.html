@@ -25,10 +25,10 @@
 	<link rel="icon" href="./assets/icon/logo.ico" />
 </head>
 
-<body>
+<body onload="startup()">
 	<!-- Title Section -->
 	<div class="section has-text-centered" id="hero">
-		<figure class="image is-128x128 mb-5" style="display: inline-block;">
+		<figure class="image is-128x128 mb-5 is-inline-block">
 			<img src="./assets/img/logo.png" id="logo" />
 		</figure>
 		<h1 class="title has-text-light">Live Currency Converter</h1>
@@ -56,7 +56,7 @@
 						<option>NZD</option>
 					</select>
 				</div>
-				<figure class="image is-64x64 inline-block" style="display: inline-block;">
+				<figure class="image is-64x64 inline-block is-inline-block">
 					<img src="https://www.countryflags.io/ca/flat/64.png" class="fromFlag"></img>
 				</figure>
 			</div>
@@ -87,9 +87,72 @@
 						<option>NZD</option>
 					</select>
 				</div>
-				<figure class="image is-64x64" style="display: inline-block;">
+				<figure class="image is-64x64 is-inline-block">
 					<img src="https://www.countryflags.io/us/flat/64.png" class="toFlag"></img>
 				</figure>
+			</div>
+		</div>
+	</div>
+	<!-- All Currencies Sections -->
+	<div class="section has-text-centered pb-0">
+		<h1 class="title has-text-light">Exchanges</h1>
+		<p class="has-text-light">(rounded to two decimal places)</p>
+	</div>
+	<div class="section" id="exchanges">
+		<div class="columns is-center is-centered is-vcentered has-text-centered">
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency1Img" />
+				</figure>
+				<p id="currency1"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency2Img" />
+				</figure>
+				<p id="currency2"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency3Img" />
+				</figure>
+				<p id="currency3"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency4Img" />
+				</figure>
+				<p id="currency4"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency5Img" />
+				</figure>
+				<p id="currency5"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency6Img" />
+				</figure>
+				<p id="currency6"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency7Img" />
+				</figure>
+				<p id="currency7"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency8Img" />
+				</figure>
+				<p id="currency8"></p>
+			</div>
+			<div class="column">
+				<figure class="image is-64x64 is-inline-block">
+					<img id="currency9Img" />
+				</figure>
+				<p id="currency9"></p>
 			</div>
 		</div>
 	</div>

@@ -10,10 +10,23 @@ async function convertCurrency() {
         // Exchange Rate Data
         const exchangeRates = rates;
 
-        // CAD Base
-        if (fromCurrency == 'CAD') updateInputTo(exchangeRates[toCurrency] * amount);
-        else updateInputTo((exchangeRates[toCurrency] / exchangeRates[fromCurrency]) * amount);
+        updateInputTo((exchangeRates[toCurrency] / exchangeRates[fromCurrency]) * amount);
     });
+}
+
+/**
+ * Converts all Currencies
+ */
+function convertAllCurrencies(baseCurrency, currency) {
+    const exchangeRates = JSON.parse(sessionStorage.getItem('cc')).rates;
+
+    delete currency[baseCurrency];
+
+    Object.keys(currency).forEach((key) => {
+        currency[key] = exchangeRates[key] / exchangeRates[baseCurrency];
+    });
+
+    return currency;
 }
 
 /**
@@ -27,7 +40,7 @@ async function getExchangeRates() {
         sessionStorage.getItem('cc') == null ||
         date - JSON.parse(sessionStorage.getItem('cc')).date > 300000
     ) {
-        // Request to the API
+        // Request to the API (uses CAD as the base currency for request)
         return await fetch('https://api.exchangeratesapi.io/latest?base=CAD', { method: 'GET' })
             .then((response) => response.text())
             .then((res) => {
