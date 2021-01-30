@@ -55,14 +55,14 @@ function flipExchanges() {
  */
 function changeFromCountryImage() {
     const selected = $('.fromCurrencyList option:selected').text();
-    updateImg('img.fromFlag', currency[selected]);
+    updateImg('img#fromFlag', currency[selected]);
     convertCurrency(selected);
     updateAllExchanges(selected);
 }
 
 function changeToCountryImage() {
     let selected = $('.toCurrencyList option:selected').text();
-    updateImg('img.toFlag', currency[selected]);
+    updateImg('img#toFlag', currency[selected]);
 }
 
 /**

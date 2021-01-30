@@ -38,8 +38,11 @@
 		<div class="column is-3-fullhd is-4-widescreen is-4-desktop is-5-tablet is-mobile">
 			<div class="section pt-0 pb-0">
 				<div class="field">
-					<div class="control">
+					<div class="control has-icons-right">
 						<input class="input is-warning" id="inputAmount" type="text" placeholder="Amount" min="1">
+						<span class="icon is-small is-right mr-2">
+							<img src="https://www.countryflags.io/ca/flat/64.png" id="fromFlag"></img>
+						</span>
 					</div>
 				</div>
 				<div class="select is-fullwidth">
@@ -56,9 +59,6 @@
 						<option>NZD</option>
 					</select>
 				</div>
-				<figure class="image is-64x64 inline-block is-inline-block">
-					<img src="https://www.countryflags.io/ca/flat/64.png" class="fromFlag"></img>
-				</figure>
 			</div>
 		</div>
 		<div class="column is-1-fullhd is-1-widescreen is-1-desktop is-2-tablet mb-4">
@@ -68,9 +68,12 @@
 			<!-- To Currency Section -->
 			<div class="section pt-0 pb-2">
 				<div class="field">
-					<div class="control">
+					<div class="control has-icons-right">
 						<input class="input is-success" id="outputAmount" type="text" placeholder="Amount" min="1"
 							readonly>
+						<span class="icon is-small is-right mr-2">
+							<img src="https://www.countryflags.io/us/flat/64.png" id="toFlag"></img>
+						</span>
 					</div>
 				</div>
 				<div class="select is-fullwidth">
@@ -87,9 +90,6 @@
 						<option>NZD</option>
 					</select>
 				</div>
-				<figure class="image is-64x64 is-inline-block">
-					<img src="https://www.countryflags.io/us/flat/64.png" class="toFlag"></img>
-				</figure>
 			</div>
 		</div>
 	</div>

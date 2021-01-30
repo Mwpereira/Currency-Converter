@@ -25,3 +25,7 @@ p {
 #hero {
     margin-top: 5vw !important;
 }
+
+#outputAmount {
+    background: #e8e8e8;
+}
