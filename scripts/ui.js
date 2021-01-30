@@ -1,5 +1,5 @@
 /**
- * Load all exchanges on page load
+ * Load all exchanges on startup
  */
 function startup() {
     $('#inputAmount').val(1);
@@ -16,7 +16,7 @@ function startup() {
     [
         {
             watchExternalChanges: true,
-            decimalPlaces: 2,
+            decimalPlaces: 6,
         },
         'floatPos',
     ]
