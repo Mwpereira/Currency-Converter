@@ -26,6 +26,7 @@ p {
     margin-top: 5vw !important;
 }
 
+#inputAmount,
 #outputAmount {
     background: #e8e8e8;
 }
