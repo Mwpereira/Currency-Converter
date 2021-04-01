@@ -41,11 +41,18 @@ async function getExchangeRates() {
         date - JSON.parse(sessionStorage.getItem('cc')).date > 300000
     ) {
         // Request to the API (uses CAD as the base currency for request)
-        return await fetch('https://api.exchangeratesapi.io/latest?base=CAD', { method: 'GET' })
+        return await fetch(
+            'https://v6.exchangerate-api.com/v6/d9681cd90e2f13ef81ea2400/latest/CAD',
+            { method: 'GET' }
+        )
             .then((response) => response.text())
             .then((res) => {
                 const data = JSON.parse(res);
-                sessionStorage.setItem('cc', JSON.stringify({ date: date, rates: data.rates }));
+                console.log(data);
+                sessionStorage.setItem(
+                    'cc',
+                    JSON.stringify({ date: date, rates: data.conversion_rates })
+                );
                 return Promise.resolve(data.rates);
             })
             .catch(() => console.log('Error getting exchange rates'));
