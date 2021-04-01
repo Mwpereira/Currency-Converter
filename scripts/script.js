@@ -53,6 +53,7 @@ async function getExchangeRates() {
                     'cc',
                     JSON.stringify({ date: date, rates: data.conversion_rates })
                 );
+                location.reload();
                 return Promise.resolve(data.rates);
             })
             .catch(() => console.log('Error getting exchange rates'));
