@@ -33,12 +33,11 @@ function convertAllCurrencies(baseCurrency, currency) {
  * Receives Exchange Rates from API
  */
 async function getExchangeRates() {
-    // Checks for exchange rates received within the last 5 minutes
     const date = Date.now();
 
     if (
         sessionStorage.getItem('cc') == null ||
-        date - JSON.parse(sessionStorage.getItem('cc')).date > 300000
+        date - JSON.parse(sessionStorage.getItem('cc')).date > 3000000
     ) {
         // Request to the API (uses CAD as the base currency for request)
         return await fetch(
