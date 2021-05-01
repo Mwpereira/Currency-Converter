@@ -11,7 +11,6 @@ Run the HTML file and that's it!
 ### Dependencies
 
 -   _exchangerate-api_ - for grabbing live exchange rates
--   _CountryFlags.io_ - for getting country flag images
 
 ## 🎨 Front-End
 

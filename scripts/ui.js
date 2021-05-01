@@ -1,14 +1,4 @@
 /**
- * Load all exchanges on startup
- */
-function startup() {
-    $('#inputAmount').val(1);
-    convertCurrency().then(() => {
-        updateAllExchanges('CAD');
-    });
-}
-
-/**
  * Formats input numbers to use commas
  */
 [inputAmount, outputAmount] = new AutoNumeric.multiple(
@@ -26,7 +16,7 @@ function startup() {
  * Update img src
  */
 function updateImg(element, country) {
-    $(element).attr('src', `https://www.countryflags.io/${country}/flat/64.png`);
+    $(element).attr('src', `../assets/img/flags/${country}.png`);
 }
 
 /**
@@ -73,7 +63,7 @@ function updateAllExchanges(baseCurrency) {
     $('#baseCurrency').html(`${baseCurrency}: 1`);
 
     // Reusing currency object to store rates for each exchange
-    const updatedExchangeRates = convertAllCurrencies(baseCurrency, { ...currency });
+    const updatedExchangeRates = convertAllCurrencies(baseCurrency, {...currency});
 
     let i = 1;
     Object.keys(updatedExchangeRates).forEach((key) => {

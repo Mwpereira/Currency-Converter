@@ -30,3 +30,13 @@ p {
 #outputAmount {
     background: #e8e8e8;
 }
+
+#exchanges img {
+    height: 40px;
+    width: 60px;
+}
+
+#fromFlag, #toFlag {
+    width: 36px;
+    height: 22.5px;
+}

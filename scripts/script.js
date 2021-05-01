@@ -1,4 +1,16 @@
 /**
+ * Load all exchanges on startup
+ */
+function startup() {
+    $('#inputAmount').val(1);
+    getExchangeRates().then(() => {
+        convertCurrency().then(() => {
+            updateAllExchanges('CAD');
+        });
+    });
+}
+
+/**
  * Converts Currency
  */
 async function convertCurrency() {
@@ -47,12 +59,10 @@ async function getExchangeRates() {
             .then((response) => response.text())
             .then((res) => {
                 const data = JSON.parse(res);
-                console.log(data);
                 sessionStorage.setItem(
                     'cc',
                     JSON.stringify({ date: date, rates: data.conversion_rates })
                 );
-                location.reload();
                 return Promise.resolve(data.rates);
             })
             .catch(() => console.log('Error getting exchange rates'));
