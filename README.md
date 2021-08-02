@@ -2,6 +2,8 @@
 
 Simple and easy to use live currency exchange converter.
 
+[Live Demo](https://cc.mwpereira.ca)
+
 ## 📐 Project Setup
 
 Run the HTML file and that's it!
